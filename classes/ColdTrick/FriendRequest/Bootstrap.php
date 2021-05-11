@@ -2,10 +2,11 @@
 
 namespace ColdTrick\FriendRequest;
 
-use Elgg\Includer;
-use Elgg\PluginBootstrap;
 
-class Bootstrap extends PluginBootstrap {
+use Elgg\DefaultPluginBootstrap;
+use Elgg\Includer;
+
+class Bootstrap extends DefaultPluginBootstrap {
 	
 	/**
 	 * Get plugin root
@@ -16,7 +17,7 @@ class Bootstrap extends PluginBootstrap {
 	}
 	
 	public function load() {
-		Includer::requireFileOnce($this->getRoot() . '/lib/functions.php');
+		Includer::requireFileOnce($this->getRoot() . '/lib/friend_request/functions.php');
 	}
 
 	/**
